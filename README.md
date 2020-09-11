@@ -22,3 +22,50 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| nick_name | string | null: false |
+| email     | string | null: false |
+| password  | string | null: false |
+| name      | string | null: false |
+
+### Association
+
+- has_many :items
+- has_many :customers
+
+## itemsテーブル
+
+| Column      | Type       | Options                       |
+| ----------- | ---------- | ----------------------------- |
+| user_id     | references | null: false, foreign_key: true|
+| image       | string     | null: false                   |
+| item_name   | string     | null: false                   |
+| explanation | string     | null: false                   |
+| price       | string     | null: false                   |
+
+### Association
+
+- belongs_to :users
+- has one :customers
+
+## customersテーブル
+
+| Column      | Type       | Options                       |
+| ----------- | ---------- | ----------------------------- |
+| user_id     | references | null: false, foreign_key: true|
+| item_id     | references | null: false, foreign_key: true|
+| card_number | string     | null: false                   |
+| yubin_number| string     | null: false                   |
+| banthi      | string     | null: false                   |
+| phone_number| string     | null: false                   |
+| tatemono    | string     | null: false                   |
+| municipality| string     | null: false                   |
+
+### Association
+
+- belongs_to :users
+- belongs_to :items
