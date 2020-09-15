@@ -48,11 +48,11 @@ Things you may want to cover:
 | user        | references | null: false, foreign_key: true|
 | item_name   | string     | null: false                   |
 | explanation | string     | null: false                   |
-| category    | integer    | null: false                   |
-| status      | integer    | null: false                   |
-| fee         | integer    | null: false                   |
-| area        | integer    | null: false                  |
-| day         | integer    | null: false                   |
+| category_id | integer    | null: false                   |
+| status_id   | integer    | null: false                   |
+| fee_id      | integer    | null: false                   |
+| area_id     | integer    | null: false                  |
+| day_id      | integer    | null: false                   |
 | price       | integer    | null: false                   |
 
 ### Association
@@ -75,14 +75,14 @@ Things you may want to cover:
 
 ## customersテーブル
 
-| Column      | Type       | Options                       |
-| ----------- | ---------- | ----------------------------- |
-| post_code   | string     | null: false                   |
-| prefectures | integer    | null: false                   |
-| municipality| string     | null: false                   |
-| address     | string     | null: false                   |
-| building    | string     |                               |
-| phone_number| string     | null: false                   |
+| Column         | Type       | Options                     |
+| -------------- | ---------- | -------------------------- |
+| post_code      | string     | null: false                |
+| prefectures_id | integer    | null: false                |
+| municipality   | string     | null: false                |
+| address        | string     | null: false                |
+| building       | string     |                            |
+| phone_number   | string     | null: false                |
 
 ### Association
 
