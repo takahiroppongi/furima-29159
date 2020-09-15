@@ -25,12 +25,16 @@ Things you may want to cover:
 
 ## usersテーブル
 
-| Column    | Type   | Options     |
-| --------- | ------ | ----------- |
-| nick_name | string | null: false |
-| email     | string | null: false |
-| password  | string | null: false |
-| name      | string | null: false |
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| nick_name       | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| second_name     | string | null: false |
+| first_name      | string | null: false |
+| second_name_k   | string | null: false |
+| first_name_k    | string | null: false |
+| birthday        | string | null: false |
 
 ### Association
 
@@ -41,23 +45,25 @@ Things you may want to cover:
 
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
-| user_id     | references | null: false, foreign_key: true|
-| image       | string     | null: false                   |
+| user        | references | null: false, foreign_key: true|
 | item_name   | string     | null: false                   |
 | explanation | string     | null: false                   |
+| category    | string     | null: false                   |
+| status      | string     | null: false                   |
+| fee         | string     | null: false                   |
+| area        | string     | null: false                  |
+| day         | string     | null: false                   |
 | price       | string     | null: false                   |
 
 ### Association
 
-- belongs_to :users
-- has one :customers
+- belongs_to :user
+- has_one :customer
 
 ## customersテーブル
 
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
-| user_id     | references | null: false, foreign_key: true|
-| item_id     | references | null: false, foreign_key: true|
 | card_number | string     | null: false                   |
 | yubin_number| string     | null: false                   |
 | banthi      | string     | null: false                   |
@@ -67,5 +73,17 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- belongs_to :purchase
+
+## purchasesテーブル
+
+| Column      | Type       | Options                       |
+| ----------- | ---------- | ----------------------------- |
+| user_id     | references | null: false, foreign_key: true|
+| item_id     | references | null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :customer
