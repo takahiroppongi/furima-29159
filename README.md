@@ -46,8 +46,8 @@ Things you may want to cover:
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
 | user        | references | null: false, foreign_key: true |
-| item_name   | string     | null: false                    |
-| explanation | string     | null: false                    |
+| name   | string     | null: false                    |
+| explanation | text       | null: false                    |
 | category_id | integer    | null: false                    |
 | status_id   | integer    | null: false                    |
 | fee_id      | integer    | null: false                    |
@@ -77,12 +77,13 @@ Things you may want to cover:
 
 | Column         | Type       | Options                     
 | -------------- | ---------- | ----------------------------- |
-| post_code      | string     | null: false,foreign_key: true |
-| prefectures_id | integer    | null: false,foreign_key: true |
-| municipality   | string     | null: false,foreign_key: true |
-| address        | string     | null: false,foreign_key: true |
-| building       | string     | foreign_key: true             |
-| phone_number   | string     | null: false,foreign_key: true |
+| purchase       | references | null: false, foreign_key: true|
+| post_code      | string     | null: false                   |
+| prefectures_id | integer    | null: false                   |
+| municipality   | string     | null: false                   |
+| address        | string     | null: false                   |
+| building       | string     |                               |
+| phone_number   | string     | null: false                   |
 
 ### Association
 
