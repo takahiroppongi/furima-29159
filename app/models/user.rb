@@ -8,10 +8,12 @@ class User < ApplicationRecord
     validates :nick_name
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
     validates_format_of :password, with: PASSWORD_REGEX
-    validates :second_name,      format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'is invalid. Input full-width characters.' }
-    validates :first_name,       format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-    validates :second_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
-    validates :first_name_kana,  format: { with: /\A[ァ-ヶー－]+\z/ }
+    NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+    validates :second_name,      with: NAME_REGEX, message: 'is invalid. Input full-width characters.' }
+    validates :first_name,       with: NAME_REGEX
+    KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
+    validates :second_name_kana, with: KANA_REGEX
+    validates :first_name_kana,  with: KANA_REGEX
     validates :birthday
   end
 end
