@@ -20,4 +20,3 @@ class Area < ActiveHash::Base
   ]
   end
 
-end
