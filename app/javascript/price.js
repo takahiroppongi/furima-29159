@@ -9,7 +9,6 @@ function tax() {
     let calc_profit = x - calc_tax
     add_tax.innerHTML = calc_tax // これが販売利益
     profit.innerHTML = calc_profit // 右側に挿入したいものを持ってくる // ここで計算結果を要素に挿入
-      
   });
 }
 window.addEventListener("load",tax)
