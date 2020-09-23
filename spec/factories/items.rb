@@ -7,7 +7,7 @@ FactoryBot.define do
     fee_id                { 2 }
     area_id               { 2 }
     day_id                { 2 }
-    price                 { Faker::Number.between(from: 300, to: 9999999) }
+    price                 { Faker::Number.between(from: 300, to: 9_999_999) }
 
     association :user
 
