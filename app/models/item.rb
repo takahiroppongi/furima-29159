@@ -19,8 +19,8 @@ class Item < ApplicationRecord
     validates :fee_id
     validates :area_id
     validates :day_id
-    validates :price, numericality: { :greater_than_or_equal_to => 300}
-    validates :price, numericality: { :less_than_or_equal_to => 9999999 }
+    validates :price, numericality: { greater_than_or_equal_to: 300}
+    validates :price, numericality: { less_than_or_equal_to: 9_999_999 }
     validates :price, format: { with: /\A[-]?[0-9]+(\.[0-9]+)?\z/ }
   end
 end
