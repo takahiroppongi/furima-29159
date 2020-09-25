@@ -82,7 +82,7 @@ Things you may want to cover:
 | prefectures_id | integer    | null: false                    |
 | municipality   | string     | null: false                    |
 | address        | string     | null: false                    |
-| building       | string     | null: false                    |
+| building       | string     |                                |
 | phone_number   | string     | null: false                    |
 
 ### Association
