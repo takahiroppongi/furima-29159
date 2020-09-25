@@ -39,7 +39,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :customers
+- has_many :orders
 
 ## itemsテーブル
 
@@ -51,16 +51,16 @@ Things you may want to cover:
 | category_id | integer    | null: false                    |
 | status_id   | integer    | null: false                    |
 | fee_id      | integer    | null: false                    |
-| area_id     | integer    | null: false                    |
+| area_id     | integer    | null: false                    |
 | day_id      | integer    | null: false                    |
 | price       | integer    | null: false                    |
 
 ### Association
 
 - belongs_to :user
-- has_one :purchase
+- has_one :order
 
-## purchasesテーブル
+## ordersテーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
@@ -82,9 +82,9 @@ Things you may want to cover:
 | prefectures_id | integer    | null: false                    |
 | municipality   | string     | null: false                    |
 | address        | string     | null: false                    |
-| building       | string     |                                |
+| building       | string     | null: false                    |
 | phone_number   | string     | null: false                    |
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :order
